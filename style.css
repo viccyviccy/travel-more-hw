@@ -11,6 +11,11 @@
   flex-flow: column;
   justify-content: center;
   align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  display: -webkit-flex;
+  display: -ms-flexbox;
 }
 
 /* MOUNTAIN BLOCK ------ FIRST BLOCK */
@@ -19,7 +24,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 100vw;
   height: 740px;
   background-image: url('./assets/bkg/bkg_01.png');
   background-repeat: no-repeat;
@@ -28,12 +33,13 @@
 }
 
 .div_mountain_main {
-  width: 1100px;
-  height: auto;
   display: flex;
   flex-flow: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  width: 1100px;
+  height: 340px;
   border: 1px solid red;
 }
 
@@ -48,11 +54,25 @@
 
 .search_panel {
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: center;
   width: 650px;
   height: 60px;
   background-color: #fff;
+}
+
+.search_panel:after {
+  display: block;
+  position: absolute;
+  content: '';
+  right: 25px;
+  /* border: 1px solid red; */
+  background-image: url('./assets//svg/loop.svg');
+  background-repeat: no-repeat;
+  background-size: 20px;
+  width: 20px;
+  height: 20px;
 }
 
 .input_search {
@@ -74,28 +94,346 @@
   text-align: center;
   height: 55px;
   width: 140px;
-  background-color: #0467a7;
+  background-color: #5474fd;
   color: white;
   border: none;
   margin: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
+/*
+.input_submit:before {
+  display: block;
+  position: absolute;
+  content: '';
+  border: 1px solid red;
+  fill: white;
+  background-image: url('./assets//svg/loop.svg');
+  background-repeat: no-repeat;
+  background-size: 30px;
+  width: 30px;
+  height: 30px;
+} */
+
 .input_submit:hover {
   border: 0.5px solid #0467a7;
   background-color: #0c7ac4;
   cursor: pointer;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .p_scroll_down {
   text-align: center;
+  position: relative;
 }
 
 .p_scroll_down:after {
   display: block;
+  position: absolute;
+  left: 30px;
+  top: 24px;
   content: '';
+  /* border: 1px solid red; */
+  fill: white;
   background-image: url('./assets//svg/arrow_down.svg');
-  background-size: 28px 28px;
+  background-repeat: no-repeat;
+  background-size: 14px 10px;
+  width: 14px;
+  height: 10px;
 }
 
-/* 650*60 */
-/* MENU BLOCK ------ SECOND BLOCK */
+/* NAVIGATION BLOCK ------ SECOND BLOCK */
+
+.container_navigation {
+  background-color: #5474fd;
+  width: 100vw;
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+}
+
+.container_navigation_inner {
+  width: 1100px;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+}
+
+.navigation_links {
+  width: 540px;
+  display: flex;
+  justify-content: space-between;
+}
+.a_navigation {
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s ease-in-out;
+}
+
+.a_navigation:hover {
+  transform: scale(1.1, 1.2);
+  transition: 0.3s ease-in-out;
+  text-shadow: rgb(238, 246, 252);
+}
 /* WHY CHOOSE US BLOCK ------ THRIRD BLOCK */
+
+.container_why_us {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 690px;
+  background-image: url('./assets/bkg/bkg_02.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+}
+
+.container_why_us_inner {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid red;
+  width: 1100px;
+}
+
+.why_us_text_side {
+  width: 540px;
+}
+
+.why_us_image_side {
+  display: flex;
+  flex-flow: column;
+  width: 540px;
+  border: 1px solid green;
+}
+
+.lake_image,
+.mountain_image {
+  width: 350px;
+  height: 220px;
+  padding-left: 66px;
+}
+
+.mountain_image {
+  padding-top: 7px;
+  align-self: flex-end;
+}
+
+/* ------ SELECT AND BOOK BLOCK ------ FOURTH BLOCK */
+
+.container_select_book {
+  background-color: #333333;
+  background-size: cover;
+  height: 335px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.container_select_book_inner {
+  width: 1110px;
+  display: flex;
+  /* position: relative; */
+  justify-content: space-around;
+  border: 1px solid red;
+  background-image: url(./assets/bkg/bkg_02_1.png);
+  /* background-attachment: fixed; */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.p_select_book1,
+.p_select_book2,
+.p_select_book3 {
+  color: #fff;
+  position: relative;
+  /* padding: 190px 50px 100px 80px; */
+  padding: 190px 69px 100px 69px;
+  font-size: 26px;
+}
+.p_select_book1:before {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 100px;
+  left: 135px;
+  background-image: url(./assets//svg/loop2.svg);
+  background-size: 60px 60px;
+  background-color: #333333;
+  width: 60px;
+  height: 60px;
+}
+.p_select_book2:before {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 100px;
+  left: 135px;
+  background-image: url(./assets//svg/done.svg);
+  background-size: 60px 60px;
+  background-color: #333333;
+  width: 60px;
+  height: 60px;
+}
+.p_select_book3:before {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 100px;
+  left: 135px;
+  background-image: url(./assets//svg/super.svg);
+  background-size: 60px 60px;
+  background-color: #333333;
+  width: 60px;
+  height: 60px;
+}
+
+/* ----- SPAIN 1 BLOCK ------ 5TH BLOCK */
+.container_spain_1 {
+  display: flex;
+  justify-content: center;
+  background-image: url(./assets/bkg/bkg_03.png);
+  background-size: cover;
+  width: 100vw;
+  height: 700px;
+}
+
+/* 540*370   #37332f */
+
+.container_spain_1_inner {
+  width: 1110px;
+  display: flex;
+  padding-bottom: 100px;
+  align-items: flex-end;
+  border: 1px solid red;
+}
+
+.spain1_text {
+  background-color: #2f2826c9;
+  width: 480px;
+  height: 310px;
+  padding: 30px;
+  color: #fff;
+}
+
+/* .h2_spain1 {
+} */
+
+.p_spain1 {
+  margin: 20px 0;
+}
+
+/* ---------- BUTTON --- GENERAL --- STYLE ------ */
+.btn {
+  width: 225px;
+  height: 60px;
+  background-color: #5474fd;
+  color: white;
+  border: none;
+  margin: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.btn:hover {
+  background-color: #0c7ac4;
+  cursor: pointer;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* 225*60 */
+/* ----- SPAIN 2 BLOCK ------ 6TH BLOCK */
+
+.container_spain_2 {
+  display: flex;
+  justify-content: center;
+  background-image: url(./assets/bkg/bkg_04.png);
+  background-size: cover;
+  width: 100vw;
+  height: 700px;
+}
+
+.container_spain_2_inner {
+  width: 1110px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding-bottom: 100px;
+  border: 1px solid red;
+}
+
+.spain2_text {
+  background-color: #2f2826c9;
+  width: 480px;
+  height: 310px;
+  padding: 30px;
+  color: #fff;
+}
+/* WHY CHOOSE US BLOCK ------ THRIRD BLOCK */
+
+.container_reviews {
+  display: flex;
+  justify-content: center;
+  background-image: url(./assets/bkg/bkg_05.png);
+  background-size: cover;
+  width: 100vw;
+  height: 700px;
+}
+
+.container_reviews_div {
+  width: 1110px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border: 1px solid red;
+}
+
+.tourist_reviews_h2 {
+  font-size: 30px;
+}
+.reviews_div {
+  display: flex;
+  height: 280px;
+}
+
+.sam_img {
+  display: block;
+  width: 447px;
+  height: 280px;
+}
+.reviews_text {
+  background-color: #333333;
+  color: #fff;
+  padding: 0 46px;
+}
+
+.tourist_name {
+  font-size: 24px;
+  margin: 50px 0;
+}
+
+/* 447*280 */
+
+/* ---------- FOOTER ----- BLOCK ------ LAST BLOCK */
+
+.footer {
+  display: flex;
+  justify-content: center;
+  /* background-image: url(./assets/bkg/bkg_03.png); */
+  background-size: cover;
+  width: 100vw;
+  height: 270px;
+  background-color: #232323;
+  color: #fff;
+}
+
+.footer_inner {
+}
+
+.footer_social_media {
+}
