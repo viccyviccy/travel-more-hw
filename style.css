@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container_main {
+  width: 100vw;
+  height: 100vh;
+}
+
+.div_mountain {
+  display: flex;
+  flex-flow: column;
+  background-image: './assets/bkg/bkg_01.png', no-repeat;
+  width: 500px;
+}
